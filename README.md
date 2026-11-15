@@ -1,148 +1,158 @@
-# COSMOQUEST: Mission Survival — Version 5
+[README_EN.md](https://github.com/user-attachments/files/34869920/README_EN.md)
+# COSMOQUEST: Mission Survival 🚀
 
-An offline-first, responsive 2D science-learning game for children aged 7–12, written in HTML5, CSS3 and vanilla JavaScript. Available in **Russian (RU), English (EN) and Kazakh (ҚАЗ / KK)**. No npm, account, backend, real-money transactions or game server is required.
+**COSMOQUEST** is an interactive, browser-based 2D educational game for children aged 7–12. Players explore space science, make engineering decisions to keep a Martian research base running, and learn scientific concepts through short challenges and mini-games.
 
-## Quick start
+![COSMOQUEST Space Academy demonstration](academy-preview-v5.png)
 
-Double-click **`COSMOQUEST_single.html`** to play offline in Chrome, Edge or Firefox. It contains all required HTML, CSS, JavaScript, SVG artwork and learning data. For editing, use `index.html` with `styles.css` and `app.js` in the same folder. If a browser restricts local files, start a basic server in this directory with `python -m http.server 8000` and open `http://localhost:8000/`.
+## Table of Contents
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Installation and Launch](#installation-and-launch)
+- [Environment Configuration](#environment-configuration)
+- [Usage Examples](#usage-examples)
+- [Project Structure](#project-structure)
+- [Testing](#testing)
+- [License](#license)
 
-Player progress is stored locally via `localStorage`. The game intentionally does not collect a child's real name, email or address. To transfer progress between devices, choose **Settings → Export/Import JSON**.
+## Features
 
-## Version 5 changes — five-microstep Space Academy
+- **Mars Mission Control:** Manage a research base over five Martian sols. Balance energy, oxygen, and crew safety, and see how each decision affects future resources.
+- **Space Academy:** Learn 36 scientific concepts across six modules. Each lesson has five stages: introduction, multiple choice, matching, fill-in-the-gap, and error correction. Each module also includes a cumulative final challenge.
+- **Spaced Repetition:** Review completed concepts on a simple 1-, 3-, 7-, 14-, or 30-day schedule based on practice results.
+- **Six Mini-Games:** Play Cosmic Recall, Cosmic Relay, Power Master, Water Loop, Space Sort, and Mission Fix.
+- **Expanded Cosmic Recall:** Answer open-ended questions from 37 categories, with 268 valid-answer groups and 797 accepted answer strings or variants. The game accepts Russian, English, and Kazakh answers.
+- **Collectible Monsters:** Choose from 10 original space monsters. Two are free; eight can be unlocked using **Cosmo Coins** earned in the game. Purchases are cosmetic only.
+- **Daily Challenges and Achievements:** Complete daily missions, earn XP and coins, unlock achievements, and track your progress.
+- **NASA Science:** Explore educational cards linked to official NASA resources and optionally request recent space-weather records through the NASA DONKI API.
+- **Three Languages:** Switch between **English, Russian, and Kazakh**. Science lessons explain concepts in the selected language rather than teaching a foreign language.
+- **Accessibility and Offline Play:** Adjustable timers, reduced-motion options, high-contrast mode, larger text, keyboard-friendly controls, and local progress saving.
 
-Every one of the **36 science lessons** now follows the same five-step learning loop, in the currently selected language (RU, EN or KK):
+> **Scientific accuracy:** Mission resource percentages, scores, and other simulation values are educational game mechanics—not live NASA measurements. COSMOQUEST is an independent project and is not an official NASA application.
 
-1. **Discover in context:** a science concept, an illustrated three-node learning diagram, its definition, and a contextual sentence. No mandatory memorization before proceeding.
-2. **Multiple choice:** choose the concept that matches its scientific definition. Correct and incorrect choices receive immediate visual feedback and optional synthesized audio.
-3. **Match three pairs:** choose the correct concept for each of three definitions. An elapsed-time counter is shown when **Timed Challenges** is enabled; it disappears when the timer setting is off. Timer performance does not prevent children from progressing.
-4. **Fill the gap:** type the concept into a meaningful space-science/engineering sentence in the selected interface language. Each concept has a tailored sentence for RU/EN/KK.
-5. **Correct mistakes:** incorrectly answered choices, individual matching pairs and fill-in-the-gap prompts are repeated until corrected. Learners who made no errors proceed directly to completion.
+## Technology Stack
 
-The lesson displays a five-step progress bar, provides immediate success/error sounds when enabled, and now has a **Next / Далее / Келесі** button on the completion screen. From the sixth lesson in a module, this goes directly to the module's existing cumulative final challenge; otherwise it opens the next concept without returning to the learning map. Previously completed lessons do not pay their standard completion reward twice.
+| Component | Technology |
+| --- | --- |
+| Languages | HTML5, CSS3, JavaScript (ES6+) |
+| Framework | None — vanilla JavaScript |
+| Graphics and animation | Inline SVG, CSS animations |
+| Browser storage | `localStorage` with JSON export/import |
+| External data | Optional NASA DONKI API using `fetch()` and the public `DEMO_KEY` |
+| Backend and database | None required |
+| Build tools | None required for playing the game |
+| Optional testing tools | Python, Playwright, Chromium, Node.js for JavaScript syntax checks |
 
-A **Scheduled Review / Повторение / Қайталау** tab was added. Completed concepts receive a simple spaced-review interval: **1, 3, 7, 14 or 30 days** after successive successful review sessions without errors; any errors reset the next review to tomorrow. Review dates (`words[id].due`), streak and mistakes are saved in the existing localStorage save. Legacy v2/v3 save records without scheduling fields are migrated to an initial 'due now' state, without losing coins, XP, achievements, lessons or monster purchases. This is intentionally a simple local scheduler, **not** an SM-2 implementation and not a push notification service.
+## Installation and Launch
 
-### Suggested data structure for future lesson authoring
+### Requirements
 
-See **`academy_questions.json`** for a full, human-editable JSON representation of all **36 lessons**. Each entry keeps learning content apart from UI state:
+- A modern browser such as **Chrome, Edge, Firefox, or Safari**.
+- **No npm installation, backend server, database, or account** is required to play.
+- Python 3 is optional if you want to run the multi-file version through a local development server.
 
-```json
-{
-  "id": "w6",
-  "moduleId": "spacecraft",
-  "concept": {"ru": "Ракета", "en": "Rocket", "kk": "Зымыран"},
-  "definition": {"ru": "Аппарат, движущийся благодаря выбросу газов.", "en": "A vehicle pushed by gases expelled at high speed.", "kk": "Газдарды жоғары жылдамдықпен шығару арқылы қозғалатын аппарат."},
-  "visual": {"emoji": "🚀", "relatedConceptIds": ["w6", "w7", "w8"]},
-  "microsteps": {
-    "intro": {"context": {"ru": "{term} поднимает космический аппарат благодаря реактивной тяге.", "en": "A {term} launches a spacecraft using thrust.", "kk": "{term} реактивті күштің көмегімен ғарыш аппаратын ұшырады."}},
-    "multipleChoice": {"correctId": "w6", "optionIds": ["w6", "w8", "w11"]},
-    "matching": {"pairConceptIds": ["w6", "w8", "w10"]},
-    "fillGap": {"sentence": {"ru": "____ поднимает космический аппарат благодаря реактивной тяге.", "en": "A ____ launches a spacecraft using thrust.", "kk": "____ реактивті күштің көмегімен ғарыш аппаратын ұшырады."}, "answerId": "w6"},
-    "errorReview": {"repeatUntilCorrect": true}
-  }
-}
+### Option 1 — Play the Standalone Version
+
+1. Download the project or its ZIP archive and extract it.
+2. Open `COSMOQUEST_single.html` in your browser.
+3. Start playing. The main experience works offline.
+
+### Option 2 — Run the Editable Version
+
+Keep `index.html`, `styles.css`, and `app.js` together in the same directory, then open `index.html` in your browser.
+
+If your browser restricts local files, open a terminal in that directory and run:
+
+```bash
+python -m http.server 8000
 ```
 
-`academy_questions.json` is an editor-friendly export of the content currently embedded in `app.js`. The offline app **does not fetch this JSON** when starting. If you edit any `fillGap.sentence` values, run `python sync_gap_from_json.py` to update `app.js`, then rebuild the autonomous HTML by running `python test_bundle_v5.py`. To refresh the JSON's concepts and definitions after editing the existing `WORDS` bank in `app.js`, run `python build_academy_data.py`. This arrangement keeps the game functional when opened directly from a file, while providing a clear foundation for a future JSON-driven build pipeline.
+Visit **http://localhost:8000/** in your browser.
 
-## Version 5 verification
+### Option 3 — Clone a Git Repository
 
-- `node --check app.js` — syntax valid.
-- `python test_v5.py` — **53 end-to-end assertions passed** on the revised lesson flow and unaffected game screens (including all three languages, daily scheduler UI, module final, six mini-game launches, NASA links, the monster shop and five responsive widths).
-- `python test_bundle_v5.py` — the **actual standalone HTML** runs when loaded into Chromium with its script at the end of the document; old version-3 saves are migrated, due concepts appear in Scheduled Review, and successful sessions advance review intervals from 1 to 3 days without duplicate lesson rewards.
-- All **36 JSON entries** have a localized concept and definition, three multiple-choice options, three matching pairs, and one nonempty gap prompt in each language.
-- Local HTTP and `file://` navigation are restricted in this test environment. The exact autonomous HTML was therefore tested using Chromium's `set_content` API. Direct file opening should still be checked on the actual demonstration machine.
+Once the project is published on GitHub, replace the placeholders below with its actual repository URL and directory:
 
-## Version 4 changes — academy and NASA usability fixes
+```bash
+git clone https://github.com/arlankalenov111-del/CosmoQuest.git
+cd COSMOQUEST_v5.zip
+```
 
-- **Monolingual Space Academy:** concept names, scientific definitions, lesson questions, answer choices, dictionary entries and flashcards appear **only in the selected app language** (Russian, English or Kazakh). The old translation and English fill-in-the-gap practice tabs have been removed. There is no longer a foreign-language learning requirement.
-- **Six new final activities:** each of the six academy modules now contains **six concept lessons plus a seventh final matching task**. After completing all six lessons, players unlock a single combined activity that matches **all six definitions** with their concepts. An incorrect or incomplete submission is retryable. Completion is saved and the bonus is awarded only once. The combined activity can be replayed for practice without repeat rewards.
-- **Moki/Orbit bug corrected:** an accidental replacement changed the English term `Orbit` into the mascot name `Moki` in one lesson. The scientific term is again `Orbit` (RU `Орбита`, KK `Орбита`). Moki remains only the helper monster.
-- **NASA Science:** removed the **Explore / Изучить** button from each of the six cards and **kept their text, classification badges, icons, verified facts and NASA links unchanged**. Clicking the card title still opens the original detailed view, so the achievement tied to viewing science cards remains achievable.
-- **Save compatibility:** the new `moduleFinals` field is added to the existing version-3 save format. Old version-2 and version-3 saves continue loading without loss of coins, monster purchases, mission progress or lessons. The save validator rejects inconsistent final-completion records.
-- **Daily missions:** the academy task now refers to learning scientific concepts and their definitions, not learning another language.
+Then open the standalone HTML file, or navigate to the folder containing `index.html` and use the local-server command above.
 
-## Version 3 changes
+## Environment Configuration
 
-### Three-language localization
+No `.env` file or secret API key is required.
 
-- **RU → EN → ҚАЗ** language button in the header, or choose the language in Settings.
-- All main navigation items, missions, daily tasks, mini-game instructions, result screens, achievements, shop controls and settings have Kazakh translations.
-- All **36 science concepts** have Russian, English and Kazakh names and definitions. The Academy displays only the currently selected language and can be searched in that language.
-- Cosmic Recall accepts valid answers in Russian, English and Kazakh, including many alternative spellings. Scientific names and brand-like mini-game titles remain in their standard forms.
-- The selected language is saved across sessions. Changing the language does not reset a running mission or the student's earned progress.
+- **Language:** Select English, Russian, or Kazakh in the game settings.
+- **Difficulty:** Choose Easy or Normal. The difficulty changes starting resources and selected timed challenges.
+- **Sound and accessibility:** Configure sound effects, animations, timers, high contrast, and text size in Settings.
+- **Saved progress:** Game data is stored in the current browser's `localStorage`. Use **Settings → Export/Import JSON** to make a backup or transfer progress manually.
+- **NASA data:** The optional DONKI request uses the public NASA `DEMO_KEY`. The main game and built-in science cards remain available if the request fails or there is no internet connection.
 
-### Collectible space monsters
+## Usage Examples
 
-- Astronaut player avatars have been replaced by **10 unique, original SVG monster characters** with distinct outlines, eyes, colors and antennae/horns.
-- **Bloop** and **Mossy** are available for free; the other **8 monsters** are purchased from the Monster Shop with earned Cosmo Coins.
-- Each purchase is applied **once**, persists locally and unlocks a playable visual character. Players can switch between all unlocked monsters in the Monster Collection screen.
-- Monsters are **cosmetic only**: owning one does not affect scientific scores, mission resources or learning progression.
-- The helper character is **Moki**, a small space monster, replacing the earlier robot character.
+### Complete a Mars Mission
 
-### Expanded Cosmic Recall
+Open **Mission Control**, start a five-sol mission, compare the resource forecasts for each choice, and try to complete the mission without exhausting essential supplies.
 
-- **37 question categories**, **268 groups of scientifically valid answers**, **797 accepted answer strings** across Russian, English, Kazakh and alternative forms.
-- Questions include planetary science, moons, astronomy instruments, spacecraft technology, environmental hazards, missions, energy, physics and science careers.
-- Each standard seven-question round selects a new mix of non-repeating questions. The daily seven-question set is based deterministically on the device's calendar date and is consistent throughout that day.
-- Correct answers receive preset educational scores of 10, 20 or 30 points based on catalog position; these are **not actual player-frequency data**.
-- Answers are normalized for capitalization, spacing, punctuation and `ё/е` spelling. A response does not require internet access or AI services.
+### Study in Space Academy
 
-## Main game modes
+Open **Space Academy**, select a module, and complete the five-step lesson. Use **Next** to move directly to the following lesson. After finishing the six concepts in a module, unlock its final matching challenge. Return to **Scheduled Review** when concepts are due for practice.
 
-- **Mission Control:** a five-sol Mars habitat simulator with energy, oxygen and safety resources, forecasts, critical limits and consequences carried forward from the previous sol. Two difficulty settings change starting supplies.
-- **Space Academy:** six modules, 36 five-step monolingual science lessons, six cumulative final challenges, a dictionary, flashcards, concept practice and spaced-review schedule.
-- **Six mini-games:** Cosmic Recall, Cosmic Relay (one local player with scripted Moki or two to four players sharing one device), Power Master, Water Loop, Space Sort and Mission Fix.
-- **Progress and economy:** XP, levels, twelve educational achievements, one-time mini-game prizes, daily missions, once-per-day challenge rewards, collectible monsters and saved settings.
-- **Accessibility:** keyboard controls, large interactive targets, adjustable timers, reduced animations, high contrast and large text.
+### Play Cosmic Recall
 
-## Real NASA science versus simulation
+Open **Mini Games → Cosmic Recall**. Answer seven open-ended space-science questions in your chosen language. Answers are checked against a local catalog, so an AI service and internet access are not needed.
 
-The educational science cards use official references; their claims must not be confused with the simplified game model:
+### Collect a Monster
 
-| Source | Science material | Status |
-|---|---|---|
-| [NASA Mars 2020 / MOXIE](https://science.nasa.gov/mission/mars-2020-perseverance/science-instruments/) | MOXIE produced 122 g of oxygen in total as a technology demonstration | Verified science material |
-| [NASA ISS water recovery](https://www.nasa.gov/missions/station/iss-research/nasa-achieves-water-recovery-milestone-on-international-space-station/) | In 2023 a specific ISS system demonstrated up to 98% recovery of collected water | Verified science material |
-| [NASA Space Communications](https://www.nasa.gov/missions/tech-demonstration/space-communications-7-things-you-need-to-know/) | Earth–Mars one-way communication delay of roughly 4–24 minutes | Verified science material |
-| [NASA MEDA Jezero report](https://www.nasa.gov/directorates/stmd/nasas-first-weather-report-from-jezero-crater-on-mars/) | Selected published historical temperature observations | Historical record |
-| [NASA OSDR OSD-37](https://osdr.nasa.gov/bio/repo/data/studies/OSD-37/) | Gene expression in four Arabidopsis thaliana ecotypes flown in space | Historical dataset |
-| [NASA DONKI](https://api.nasa.gov/) | Optional recent CME event records retrieved on demand with `DEMO_KEY` | API records, if successfully retrieved |
+Earn Cosmo Coins through lessons and mini-games, open the **Monster Shop**, unlock a monster, and select it in your collection. Monsters do not change scientific scores or mission performance.
 
-Every numerical resource percentage, simulated warning or game score is **an educational game value**, not NASA telemetry, a forecast, or a radiation dose. A DONKI CME report alone cannot establish radiation conditions on Mars. The app works without the NASA API, and does not call it until the user chooses to load records.
-
-## Saved progress and migration
-
-The app recognizes the existing `cosmoquest-mission-survival-v2` localStorage key and transparently migrates **version 2** saves to **version 3**. Previously earned coins, XP, lessons, mission progress, achievements, daily records and the chosen language are preserved. The old astronaut cosmetic wardrobe has been replaced with the monster collection; migrating players start with the free Bloop monster while keeping their other game progression. Older cosmetic purchase identifiers are retained in the saved data for compatibility but are not sold or displayed as wearable monster equipment. Export a JSON backup before large changes or switching browsers.
-
-Imported saves are size-checked and validated for their expected shape, allowed values and relevant state fields. Since the system is entirely client-side, it cannot prevent intentional modifications to local files or the device clock.
-
-## Files and tests
+## Project Structure
 
 ```text
 COSMOQUEST/
-├── index.html                Multi-file entry point
-├── styles.css                Responsive design and Academy styles
-├── app.js                    Game logic, all localization, offline content
-├── COSMOQUEST_single.html    Autonomous HTML game
-├── academy_questions.json    36 full lesson entries (editor-friendly)
-├── sync_gap_from_json.py     Embed edited gap prompts in app.js
-├── build_academy_data.py     Export terms and localized prompts as JSON
-├── test_v5.py               53 browser regression checks
-├── test_bundle_v5.py        Autonomous HTML & legacy migration test
-├── academy-preview-v5.png   Concept intro screenshot
-├── academy-matching-v5.png  Matching screenshot
-├── academy-review-v5.png    Error review screenshot
-├── academy-next-v5.png      Next button on lesson completion
-└── README.md                 Documentation
+├── index.html                # Entry point for the editable version
+├── styles.css                # Responsive layout and visual design
+├── app.js                    # Game logic, localization, and embedded content
+├── COSMOQUEST_single.html    # Standalone offline game
+├── academy_questions.json    # Editor-friendly data for 36 lessons
+├── sync_gap_from_json.py     # Sync edited gap prompts into app.js
+├── build_academy_data.py     # Export lesson data from app.js to JSON
+├── test_v5.py                # Browser regression tests
+├── test_bundle_v5.py         # Standalone-file and save migration tests
+├── test_answers.py           # Cosmic Recall answer checks
+├── test_persistence.py       # Saving and reward tests
+├── academy-preview-v5.png    # Lesson introduction screenshot
+├── academy-matching-v5.png   # Matching activity screenshot
+├── academy-review-v5.png     # Error-correction screenshot
+├── academy-next-v5.png       # Next-lesson screen screenshot
+└── README.md                 # Project documentation
 ```
 
-Legacy v4 tests and migration scripts may also remain in the development folder for historical reference, but several v4 tests assume the previous two-step lessons and are not the authoritative acceptance tests for v5.
+**Note:** `academy_questions.json` is provided for easier content editing. The currently playable game loads its lesson data from `app.js`; it does **not** automatically fetch the JSON file. After editing gap prompts, run `python sync_gap_from_json.py` and rebuild the standalone version according to the project scripts.
 
-## Known limits
+## Testing
 
-- No online multiplayer or cloud synchronization; Cosmic Relay works locally with scripted Moki or players sharing one device.
-- Child-friendly mission models are not a substitute for accurate engineering or atmospheric calculations.
-- Language review by a native Kazakh-speaking educator is recommended before distribution to schools, especially for specialized scientific terms.
-- The core app works offline; live DONKI retrieval is optional and can fail due to network restrictions, CORS or demo-key rate limits.
-- This project is **not an official NASA application**. The mascot, game art and gameplay are original.
+For a JavaScript syntax check (Node.js is only needed for this optional command):
+
+```bash
+node --check app.js
+```
+
+The project also includes browser-based regression tests. To run them, install Python Playwright and a compatible Chromium browser, then run:
+
+```bash
+python test_v5.py
+python test_bundle_v5.py
+python test_answers.py
+python test_persistence.py
+```
+
+Version 5 was tested for lesson flow, localization, save compatibility, rewards, and responsive layouts. Automated tests cannot guarantee the absence of all bugs; check direct opening of the standalone HTML on the target demonstration device.
+
+## License
+
+**No license has been specified for this repository yet.** Add a `LICENSE` file before publishing the project for reuse or distribution under a particular open-source license.
+
+NASA resources are attributed to their original sources. COSMOQUEST is independently developed and is **not affiliated with or endorsed by NASA**.
