@@ -2,7 +2,7 @@
 
 **COSMOQUEST** is an interactive, browser-based 2D educational game for children aged 7–12. Players explore space science, make engineering decisions to keep a Martian research base running, and learn scientific concepts through short challenges and mini-games.
 
-![COSMOQUEST Space Academy demonstration](academy-preview-v5.png)
+
 
 ## Table of Contents
 - [Features](#features)
