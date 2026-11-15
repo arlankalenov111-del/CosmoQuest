@@ -1,0 +1,2408 @@
+{
+  "schemaVersion": 1,
+  "name": "COSMOQUEST Space Academy",
+  "languages": [
+    "ru",
+    "en",
+    "kk"
+  ],
+  "modules": [
+    "space-basics",
+    "spacecraft",
+    "life-support",
+    "energy-engineering",
+    "space-environment",
+    "mission-planning"
+  ],
+  "spacedRepetition": {
+    "strategy": "simple interval ladder",
+    "intervalDays": [
+      1,
+      3,
+      7,
+      14,
+      30
+    ],
+    "afterMistakeDays": 1,
+    "storage": "localStorage, under words[id].due",
+    "note": "Not full SM-2; no reminders or server scheduling."
+  },
+  "lessons": [
+    {
+      "id": "w0",
+      "moduleId": "space-basics",
+      "concept": {
+        "ru": "Планета",
+        "en": "Planet",
+        "kk": "Ғаламшар"
+      },
+      "definition": {
+        "ru": "Большое небесное тело, вращающееся вокруг звезды.",
+        "en": "A large object that orbits a star.",
+        "kk": "Жұлдызды айнала қозғалатын ірі аспан денесі."
+      },
+      "visual": {
+        "emoji": "🪐",
+        "relatedConceptIds": [
+          "w1",
+          "w0",
+          "w2"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} обращается вокруг звезды, например вокруг Солнца.",
+            "en": "A {term} travels around a star, such as the Sun.",
+            "kk": "{term} жұлдызды, мысалы Күнді, айналады."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w0",
+          "optionIds": [
+            "w0",
+            "w2",
+            "w4"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w0",
+            "w2",
+            "w4"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ обращается вокруг звезды, например вокруг Солнца.",
+            "en": "A ____ travels around a star, such as the Sun.",
+            "kk": "____ жұлдызды, мысалы Күнді, айналады."
+          },
+          "answerId": "w0",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w1",
+      "moduleId": "space-basics",
+      "concept": {
+        "ru": "Звезда",
+        "en": "Star",
+        "kk": "Жұлдыз"
+      },
+      "definition": {
+        "ru": "Горячее светящееся небесное тело.",
+        "en": "A huge hot ball of gas that makes light.",
+        "kk": "Өзінен жарық шығаратын өте ыстық аспан денесі."
+      },
+      "visual": {
+        "emoji": "☀️",
+        "relatedConceptIds": [
+          "w1",
+          "w0",
+          "w2"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} излучает собственный свет и энергию; Солнце — пример.",
+            "en": "A {term} produces its own light and energy; the Sun is one.",
+            "kk": "{term} өз жарығы мен энергиясын шығарады; Күн — соның бірі."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w1",
+          "optionIds": [
+            "w1",
+            "w2",
+            "w5"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w1",
+            "w3",
+            "w5"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ излучает собственный свет и энергию; Солнце — пример.",
+            "en": "A ____ produces its own light and energy; the Sun is one.",
+            "kk": "____ өз жарығы мен энергиясын шығарады; Күн — соның бірі."
+          },
+          "answerId": "w1",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w2",
+      "moduleId": "space-basics",
+      "concept": {
+        "ru": "Луна",
+        "en": "Moon",
+        "kk": "Ай"
+      },
+      "definition": {
+        "ru": "Естественный спутник планеты.",
+        "en": "A natural satellite that orbits a planet.",
+        "kk": "Ғаламшарды айналатын табиғи серік."
+      },
+      "visual": {
+        "emoji": "🌙",
+        "relatedConceptIds": [
+          "w1",
+          "w0",
+          "w2"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} — естественный спутник Земли.",
+            "en": "The {term} is Earth’s natural satellite.",
+            "kk": "{term} — Жердің табиғи серігі."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w2",
+          "optionIds": [
+            "w2",
+            "w3",
+            "w5"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w2",
+            "w4",
+            "w0"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ — естественный спутник Земли.",
+            "en": "The ____ is Earth’s natural satellite.",
+            "kk": "____ — Жердің табиғи серігі."
+          },
+          "answerId": "w2",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w3",
+      "moduleId": "space-basics",
+      "concept": {
+        "ru": "Орбита",
+        "en": "Orbit",
+        "kk": "Орбита"
+      },
+      "definition": {
+        "ru": "Путь небесного тела вокруг другого.",
+        "en": "The path of an object around another object.",
+        "kk": "Бір дененің екінші денені айнала қозғалу жолы."
+      },
+      "visual": {
+        "emoji": "🔁",
+        "relatedConceptIds": [
+          "w1",
+          "w0",
+          "w2"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} Земли вокруг Солнца немного вытянута.",
+            "en": "Earth follows an almost circular {term} around the Sun.",
+            "kk": "Жердің Күнді айналу {term} сәл созылыңқы."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w3",
+          "optionIds": [
+            "w0",
+            "w2",
+            "w3"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w3",
+            "w5",
+            "w1"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ Земли вокруг Солнца немного вытянута.",
+            "en": "Earth follows an almost circular ____ around the Sun.",
+            "kk": "Жердің Күнді айналу ____ сәл созылыңқы."
+          },
+          "answerId": "w3",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w4",
+      "moduleId": "space-basics",
+      "concept": {
+        "ru": "Гравитация",
+        "en": "Gravity",
+        "kk": "Гравитация"
+      },
+      "definition": {
+        "ru": "Сила притяжения между телами, обладающими массой.",
+        "en": "The force that attracts objects with mass.",
+        "kk": "Массасы бар денелердің бірін-бірі тарту күші."
+      },
+      "visual": {
+        "emoji": "🍎",
+        "relatedConceptIds": [
+          "w1",
+          "w0",
+          "w2"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} удерживает планеты на орбитах вокруг Солнца.",
+            "en": "{term} keeps planets in orbit around the Sun.",
+            "kk": "{term} ғаламшарларды Күн айналасындағы орбитада ұстап тұрады."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w4",
+          "optionIds": [
+            "w0",
+            "w3",
+            "w4"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w4",
+            "w0",
+            "w2"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ удерживает планеты на орбитах вокруг Солнца.",
+            "en": "____ keeps planets in orbit around the Sun.",
+            "kk": "____ ғаламшарларды Күн айналасындағы орбитада ұстап тұрады."
+          },
+          "answerId": "w4",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w5",
+      "moduleId": "space-basics",
+      "concept": {
+        "ru": "Астронавт",
+        "en": "Astronaut",
+        "kk": "Ғарышкер"
+      },
+      "definition": {
+        "ru": "Человек, подготовленный к космическим полётам.",
+        "en": "A person trained to travel into space.",
+        "kk": "Ғарышқа ұшуға дайындалған адам."
+      },
+      "visual": {
+        "emoji": "👩‍🚀",
+        "relatedConceptIds": [
+          "w1",
+          "w0",
+          "w2"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} работает в космическом аппарате после специальной подготовки.",
+            "en": "An {term} works in a spacecraft after special training.",
+            "kk": "{term} арнайы дайындықтан кейін ғарыш кемесінде жұмыс істейді."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w5",
+          "optionIds": [
+            "w1",
+            "w3",
+            "w5"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w5",
+            "w1",
+            "w3"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ работает в космическом аппарате после специальной подготовки.",
+            "en": "An ____ works in a spacecraft after special training.",
+            "kk": "____ арнайы дайындықтан кейін ғарыш кемесінде жұмыс істейді."
+          },
+          "answerId": "w5",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w6",
+      "moduleId": "spacecraft",
+      "concept": {
+        "ru": "Ракета",
+        "en": "Rocket",
+        "kk": "Зымыран"
+      },
+      "definition": {
+        "ru": "Аппарат, движущийся благодаря выбросу газов.",
+        "en": "A vehicle pushed by gases expelled at high speed.",
+        "kk": "Газдарды жоғары жылдамдықпен шығару арқылы қозғалатын аппарат."
+      },
+      "visual": {
+        "emoji": "🚀",
+        "relatedConceptIds": [
+          "w6",
+          "w7",
+          "w8"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} поднимает космический аппарат благодаря реактивной тяге.",
+            "en": "A {term} launches a spacecraft using thrust.",
+            "kk": "{term} реактивті күштің көмегімен ғарыш аппаратын ұшырады."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w6",
+          "optionIds": [
+            "w6",
+            "w8",
+            "w11"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w6",
+            "w8",
+            "w10"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ поднимает космический аппарат благодаря реактивной тяге.",
+            "en": "A ____ launches a spacecraft using thrust.",
+            "kk": "____ реактивті күштің көмегімен ғарыш аппаратын ұшырады."
+          },
+          "answerId": "w6",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w7",
+      "moduleId": "spacecraft",
+      "concept": {
+        "ru": "Космический аппарат",
+        "en": "Spacecraft",
+        "kk": "Ғарыш аппараты"
+      },
+      "definition": {
+        "ru": "Аппарат для работы или полёта в космосе.",
+        "en": "A vehicle designed for use in space.",
+        "kk": "Ғарышта жұмыс істеуге немесе ұшуға арналған құрылғы."
+      },
+      "visual": {
+        "emoji": "🛸",
+        "relatedConceptIds": [
+          "w6",
+          "w7",
+          "w8"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} может исследовать Марс без экипажа на борту.",
+            "en": "A {term} can explore Mars without a crew on board.",
+            "kk": "{term} экипажсыз да Марсты зерттей алады."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w7",
+          "optionIds": [
+            "w7",
+            "w9",
+            "w11"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w7",
+            "w9",
+            "w11"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ может исследовать Марс без экипажа на борту.",
+            "en": "A ____ can explore Mars without a crew on board.",
+            "kk": "____ экипажсыз да Марсты зерттей алады."
+          },
+          "answerId": "w7",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w8",
+      "moduleId": "spacecraft",
+      "concept": {
+        "ru": "Марсоход",
+        "en": "Rover",
+        "kk": "Марсоход"
+      },
+      "definition": {
+        "ru": "Робот, исследующий поверхность планеты.",
+        "en": "A robot that explores a planet surface.",
+        "kk": "Ғаламшар бетін зерттейтін робот."
+      },
+      "visual": {
+        "emoji": "🚙",
+        "relatedConceptIds": [
+          "w6",
+          "w7",
+          "w8"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} изучает марсианские камни с помощью приборов.",
+            "en": "A {term} studies Martian rocks using instruments.",
+            "kk": "{term} аспаптардың көмегімен Марстағы тастарды зерттейді."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w8",
+          "optionIds": [
+            "w6",
+            "w8",
+            "w9"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w8",
+            "w10",
+            "w6"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ изучает марсианские камни с помощью приборов.",
+            "en": "A ____ studies Martian rocks using instruments.",
+            "kk": "____ аспаптардың көмегімен Марстағы тастарды зерттейді."
+          },
+          "answerId": "w8",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w9",
+      "moduleId": "spacecraft",
+      "concept": {
+        "ru": "Спутник",
+        "en": "Satellite",
+        "kk": "Серік"
+      },
+      "definition": {
+        "ru": "Объект, обращающийся вокруг небесного тела.",
+        "en": "An object that moves around another celestial body.",
+        "kk": "Аспан денесін айнала қозғалатын нысан."
+      },
+      "visual": {
+        "emoji": "📡",
+        "relatedConceptIds": [
+          "w6",
+          "w7",
+          "w8"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} может передавать данные, обращаясь вокруг планеты.",
+            "en": "A {term} can transmit data while orbiting a planet.",
+            "kk": "{term} ғаламшарды айналып жүріп дерек жібере алады."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w9",
+          "optionIds": [
+            "w6",
+            "w9",
+            "w10"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w9",
+            "w11",
+            "w7"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ может передавать данные, обращаясь вокруг планеты.",
+            "en": "A ____ can transmit data while orbiting a planet.",
+            "kk": "____ ғаламшарды айналып жүріп дерек жібере алады."
+          },
+          "answerId": "w9",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w10",
+      "moduleId": "spacecraft",
+      "concept": {
+        "ru": "Скафандр",
+        "en": "Spacesuit",
+        "kk": "Скафандр"
+      },
+      "definition": {
+        "ru": "Защитный костюм для работы в космосе.",
+        "en": "A protective suit for activity in space.",
+        "kk": "Ғарышта жұмыс істегенде қорғайтын арнайы киім."
+      },
+      "visual": {
+        "emoji": "🧑‍🚀",
+        "relatedConceptIds": [
+          "w6",
+          "w7",
+          "w8"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} защищает человека во время работы вне корабля.",
+            "en": "A {term} protects a person while working outside a spacecraft.",
+            "kk": "{term} ғарыш кемесінен тыс жұмыс кезінде адамды қорғайды."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w10",
+          "optionIds": [
+            "w7",
+            "w9",
+            "w10"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w10",
+            "w6",
+            "w8"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ защищает человека во время работы вне корабля.",
+            "en": "A ____ protects a person while working outside a spacecraft.",
+            "kk": "____ ғарыш кемесінен тыс жұмыс кезінде адамды қорғайды."
+          },
+          "answerId": "w10",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w11",
+      "moduleId": "spacecraft",
+      "concept": {
+        "ru": "Космическая станция",
+        "en": "Space Station",
+        "kk": "Ғарыш станциясы"
+      },
+      "definition": {
+        "ru": "Комплекс для жизни и работы людей в космосе.",
+        "en": "A facility where people can live and work in space.",
+        "kk": "Адамдар ғарышта өмір сүріп, жұмыс істей алатын кешен."
+      },
+      "visual": {
+        "emoji": "🏠",
+        "relatedConceptIds": [
+          "w6",
+          "w7",
+          "w8"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} позволяет экипажу жить и проводить опыты на орбите.",
+            "en": "A {term} lets a crew live and run experiments in orbit.",
+            "kk": "{term} экипаждың орбитада өмір сүріп, тәжірибе жасауына мүмкіндік береді."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w11",
+          "optionIds": [
+            "w7",
+            "w10",
+            "w11"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w11",
+            "w7",
+            "w9"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ позволяет экипажу жить и проводить опыты на орбите.",
+            "en": "A ____ lets a crew live and run experiments in orbit.",
+            "kk": "____ экипаждың орбитада өмір сүріп, тәжірибе жасауына мүмкіндік береді."
+          },
+          "answerId": "w11",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w12",
+      "moduleId": "life-support",
+      "concept": {
+        "ru": "Кислород",
+        "en": "Oxygen",
+        "kk": "Оттегі"
+      },
+      "definition": {
+        "ru": "Газ, необходимый человеку для дыхания.",
+        "en": "A gas humans need to breathe.",
+        "kk": "Адамға тыныс алу үшін қажет газ."
+      },
+      "visual": {
+        "emoji": "🫧",
+        "relatedConceptIds": [
+          "w12",
+          "w14",
+          "w17"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} необходим человеку для дыхания.",
+            "en": "Humans need {term} to breathe.",
+            "kk": "Адамға тыныс алу үшін {term} қажет."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w12",
+          "optionIds": [
+            "w12",
+            "w15",
+            "w17"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w12",
+            "w14",
+            "w16"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ необходим человеку для дыхания.",
+            "en": "Humans need ____ to breathe.",
+            "kk": "Адамға тыныс алу үшін ____ қажет."
+          },
+          "answerId": "w12",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w13",
+      "moduleId": "life-support",
+      "concept": {
+        "ru": "Переработка воды",
+        "en": "Water Recycling",
+        "kk": "Суды қайта өңдеу"
+      },
+      "definition": {
+        "ru": "Очистка и повторное использование воды.",
+        "en": "Cleaning and reusing water.",
+        "kk": "Суды тазалап, қайта пайдалану үдерісі."
+      },
+      "visual": {
+        "emoji": "💧",
+        "relatedConceptIds": [
+          "w12",
+          "w14",
+          "w17"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} помогает экипажу экономить запасы на станции.",
+            "en": "{term} helps the crew conserve supplies aboard a station.",
+            "kk": "{term} станцияда суды үнемдеуге көмектеседі."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w13",
+          "optionIds": [
+            "w12",
+            "w13",
+            "w15"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w13",
+            "w15",
+            "w17"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ помогает экипажу экономить запасы на станции.",
+            "en": "____ helps the crew conserve supplies aboard a station.",
+            "kk": "____ станцияда суды үнемдеуге көмектеседі."
+          },
+          "answerId": "w13",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w14",
+      "moduleId": "life-support",
+      "concept": {
+        "ru": "Жизнеобеспечение",
+        "en": "Life Support",
+        "kk": "Тіршілікті қамтамасыз ету"
+      },
+      "definition": {
+        "ru": "Системы, поддерживающие жизнь экипажа.",
+        "en": "Systems that keep astronauts alive.",
+        "kk": "Экипаждың өмір сүруіне қажетті жағдай жасайтын жүйелер."
+      },
+      "visual": {
+        "emoji": "❤️",
+        "relatedConceptIds": [
+          "w12",
+          "w14",
+          "w17"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} поддерживает пригодный для дыхания воздух в жилом модуле.",
+            "en": "{term} keeps the air inside a habitat breathable.",
+            "kk": "{term} тұрғын модульдегі ауаның тыныс алуға жарамды болуын қамтамасыз етеді."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w14",
+          "optionIds": [
+            "w12",
+            "w14",
+            "w16"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w14",
+            "w16",
+            "w12"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ поддерживает пригодный для дыхания воздух в жилом модуле.",
+            "en": "____ keeps the air inside a habitat breathable.",
+            "kk": "____ тұрғын модульдегі ауаның тыныс алуға жарамды болуын қамтамасыз етеді."
+          },
+          "answerId": "w14",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w15",
+      "moduleId": "life-support",
+      "concept": {
+        "ru": "Углекислый газ",
+        "en": "Carbon Dioxide",
+        "kk": "Көмірқышқыл газы"
+      },
+      "definition": {
+        "ru": "Газ, который мы выдыхаем; его много в атмосфере Марса.",
+        "en": "A gas exhaled by people and common in Mars air.",
+        "kk": "Адам тыныс шығарғанда бөлетін, Марс атмосферасында көп кездесетін газ."
+      },
+      "visual": {
+        "emoji": "🌫️",
+        "relatedConceptIds": [
+          "w12",
+          "w14",
+          "w17"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} составляет большую часть атмосферы Марса.",
+            "en": "{term} makes up most of the Martian atmosphere.",
+            "kk": "{term} Марс атмосферасының басым бөлігін құрайды."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w15",
+          "optionIds": [
+            "w13",
+            "w15",
+            "w16"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w15",
+            "w17",
+            "w13"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ составляет большую часть атмосферы Марса.",
+            "en": "____ makes up most of the Martian atmosphere.",
+            "kk": "____ Марс атмосферасының басым бөлігін құрайды."
+          },
+          "answerId": "w15",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w16",
+      "moduleId": "life-support",
+      "concept": {
+        "ru": "Давление воздуха",
+        "en": "Air Pressure",
+        "kk": "Ауа қысымы"
+      },
+      "definition": {
+        "ru": "Сила, с которой воздух давит на поверхность.",
+        "en": "The force air exerts on a surface.",
+        "kk": "Ауаның бетке түсіретін қысым күші."
+      },
+      "visual": {
+        "emoji": "🧪",
+        "relatedConceptIds": [
+          "w12",
+          "w14",
+          "w17"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} внутри модуля нужно контролировать для безопасности экипажа.",
+            "en": "{term} inside a habitat must be controlled for crew safety.",
+            "kk": "Экипаж қауіпсіздігі үшін модуль ішіндегі {term} бақылау қажет."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w16",
+          "optionIds": [
+            "w13",
+            "w16",
+            "w17"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w16",
+            "w12",
+            "w14"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ внутри модуля нужно контролировать для безопасности экипажа.",
+            "en": "____ inside a habitat must be controlled for crew safety.",
+            "kk": "Экипаж қауіпсіздігі үшін модуль ішіндегі ____ бақылау қажет."
+          },
+          "answerId": "w16",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w17",
+      "moduleId": "life-support",
+      "concept": {
+        "ru": "Жилой модуль",
+        "en": "Habitat",
+        "kk": "Тұрғын модуль"
+      },
+      "definition": {
+        "ru": "Помещение, предназначенное для жизни экипажа.",
+        "en": "A place built for astronauts to live.",
+        "kk": "Ғарышкерлер тұратын арнайы жабдықталған орын."
+      },
+      "visual": {
+        "emoji": "🏘️",
+        "relatedConceptIds": [
+          "w12",
+          "w14",
+          "w17"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} предоставляет экипажу место для жизни и работы.",
+            "en": "A {term} provides a place for the crew to live and work.",
+            "kk": "{term} экипаждың өмір сүруі мен жұмыс істеуіне арналған."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w17",
+          "optionIds": [
+            "w14",
+            "w16",
+            "w17"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w17",
+            "w13",
+            "w15"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ предоставляет экипажу место для жизни и работы.",
+            "en": "A ____ provides a place for the crew to live and work.",
+            "kk": "____ экипаждың өмір сүруі мен жұмыс істеуіне арналған."
+          },
+          "answerId": "w17",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w18",
+      "moduleId": "energy-engineering",
+      "concept": {
+        "ru": "Солнечная панель",
+        "en": "Solar Panel",
+        "kk": "Күн панелі"
+      },
+      "definition": {
+        "ru": "Устройство, превращающее солнечный свет в электричество.",
+        "en": "A device that converts sunlight into electricity.",
+        "kk": "Күн сәулесін электр энергиясына айналдыратын құрылғы."
+      },
+      "visual": {
+        "emoji": "🔆",
+        "relatedConceptIds": [
+          "w18",
+          "w19",
+          "w21"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} преобразует солнечный свет в электричество.",
+            "en": "A {term} converts sunlight into electricity.",
+            "kk": "{term} күн сәулесін электр энергиясына айналдырады."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w18",
+          "optionIds": [
+            "w18",
+            "w19",
+            "w21"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w18",
+            "w20",
+            "w22"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ преобразует солнечный свет в электричество.",
+            "en": "A ____ converts sunlight into electricity.",
+            "kk": "____ күн сәулесін электр энергиясына айналдырады."
+          },
+          "answerId": "w18",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w19",
+      "moduleId": "energy-engineering",
+      "concept": {
+        "ru": "Аккумулятор",
+        "en": "Battery",
+        "kk": "Аккумулятор"
+      },
+      "definition": {
+        "ru": "Устройство для хранения электрической энергии.",
+        "en": "A device that stores electrical energy.",
+        "kk": "Электр энергиясын жинақтайтын құрылғы."
+      },
+      "visual": {
+        "emoji": "🔋",
+        "relatedConceptIds": [
+          "w18",
+          "w19",
+          "w21"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} хранит электрическую энергию на случай ночи.",
+            "en": "A {term} stores electrical energy for nighttime use.",
+            "kk": "{term} түнде пайдалану үшін электр энергиясын сақтайды."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w19",
+          "optionIds": [
+            "w18",
+            "w19",
+            "w22"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w19",
+            "w21",
+            "w23"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ хранит электрическую энергию на случай ночи.",
+            "en": "A ____ stores electrical energy for nighttime use.",
+            "kk": "____ түнде пайдалану үшін электр энергиясын сақтайды."
+          },
+          "answerId": "w19",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w20",
+      "moduleId": "energy-engineering",
+      "concept": {
+        "ru": "Мощность",
+        "en": "Power",
+        "kk": "Қуат"
+      },
+      "definition": {
+        "ru": "Скорость передачи или преобразования энергии.",
+        "en": "The rate at which energy is transferred.",
+        "kk": "Энергияның берілу немесе түрлену жылдамдығы."
+      },
+      "visual": {
+        "emoji": "⚡",
+        "relatedConceptIds": [
+          "w18",
+          "w19",
+          "w21"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} показывает, как быстро используется или передаётся энергия.",
+            "en": "{term} describes how quickly energy is transferred.",
+            "kk": "{term} энергияның қаншалықты жылдам берілетінін көрсетеді."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w20",
+          "optionIds": [
+            "w19",
+            "w20",
+            "w22"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w20",
+            "w22",
+            "w18"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ показывает, как быстро используется или передаётся энергия.",
+            "en": "____ describes how quickly energy is transferred.",
+            "kk": "____ энергияның қаншалықты жылдам берілетінін көрсетеді."
+          },
+          "answerId": "w20",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w21",
+      "moduleId": "energy-engineering",
+      "concept": {
+        "ru": "Энергия",
+        "en": "Energy",
+        "kk": "Энергия"
+      },
+      "definition": {
+        "ru": "Физическая величина, характеризующая способность совершать работу.",
+        "en": "The capacity to do work or cause change.",
+        "kk": "Жұмыс істеу немесе өзгеріс туғызу қабілетін сипаттайтын физикалық шама."
+      },
+      "visual": {
+        "emoji": "💡",
+        "relatedConceptIds": [
+          "w18",
+          "w19",
+          "w21"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} необходима для работы приборов и обогрева станции.",
+            "en": "{term} is needed to operate instruments and heat a station.",
+            "kk": "{term} станцияны жылытуға және аспаптарды іске қосуға қажет."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w21",
+          "optionIds": [
+            "w19",
+            "w21",
+            "w23"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w21",
+            "w23",
+            "w19"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ необходима для работы приборов и обогрева станции.",
+            "en": "____ is needed to operate instruments and heat a station.",
+            "kk": "____ станцияны жылытуға және аспаптарды іске қосуға қажет."
+          },
+          "answerId": "w21",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w22",
+      "moduleId": "energy-engineering",
+      "concept": {
+        "ru": "Генератор",
+        "en": "Generator",
+        "kk": "Генератор"
+      },
+      "definition": {
+        "ru": "Устройство, вырабатывающее электрическую энергию.",
+        "en": "A device that produces electrical energy.",
+        "kk": "Электр энергиясын өндіретін құрылғы."
+      },
+      "visual": {
+        "emoji": "⚙️",
+        "relatedConceptIds": [
+          "w18",
+          "w19",
+          "w21"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} вырабатывает электричество для систем базы.",
+            "en": "A {term} produces electricity for base systems.",
+            "kk": "{term} база жүйелері үшін электр энергиясын өндіреді."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w22",
+          "optionIds": [
+            "w20",
+            "w22",
+            "w23"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w22",
+            "w18",
+            "w20"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ вырабатывает электричество для систем базы.",
+            "en": "A ____ produces electricity for base systems.",
+            "kk": "____ база жүйелері үшін электр энергиясын өндіреді."
+          },
+          "answerId": "w22",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w23",
+      "moduleId": "energy-engineering",
+      "concept": {
+        "ru": "Научное оборудование",
+        "en": "Research Equipment",
+        "kk": "Ғылыми жабдық"
+      },
+      "definition": {
+        "ru": "Приборы для исследований и измерений.",
+        "en": "Tools used to study and measure things.",
+        "kk": "Зерттеу мен өлшеуге арналған құралдар."
+      },
+      "visual": {
+        "emoji": "🔬",
+        "relatedConceptIds": [
+          "w18",
+          "w19",
+          "w21"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} позволяет учёным проводить измерения на станции.",
+            "en": "{term} lets scientists make measurements at a station.",
+            "kk": "{term} ғалымдарға станцияда өлшеулер жүргізуге көмектеседі."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w23",
+          "optionIds": [
+            "w18",
+            "w20",
+            "w23"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w23",
+            "w19",
+            "w21"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ позволяет учёным проводить измерения на станции.",
+            "en": "____ lets scientists make measurements at a station.",
+            "kk": "____ ғалымдарға станцияда өлшеулер жүргізуге көмектеседі."
+          },
+          "answerId": "w23",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w24",
+      "moduleId": "space-environment",
+      "concept": {
+        "ru": "Радиация",
+        "en": "Radiation",
+        "kk": "Радиация"
+      },
+      "definition": {
+        "ru": "Энергия, распространяющаяся в форме волн или частиц.",
+        "en": "Energy transmitted by waves or particles.",
+        "kk": "Толқындар немесе бөлшектер арқылы таралатын энергия."
+      },
+      "visual": {
+        "emoji": "☢️",
+        "relatedConceptIds": [
+          "w25",
+          "w24",
+          "w29"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} может представлять опасность для экипажа вне защиты.",
+            "en": "{term} can pose a risk to an unprotected crew.",
+            "kk": "{term} қорғанышсыз экипажға қауіп төндіруі мүмкін."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w24",
+          "optionIds": [
+            "w24",
+            "w25",
+            "w28"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w24",
+            "w26",
+            "w28"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ может представлять опасность для экипажа вне защиты.",
+            "en": "____ can pose a risk to an unprotected crew.",
+            "kk": "____ қорғанышсыз экипажға қауіп төндіруі мүмкін."
+          },
+          "answerId": "w24",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w25",
+      "moduleId": "space-environment",
+      "concept": {
+        "ru": "Солнечная вспышка",
+        "en": "Solar Flare",
+        "kk": "Күн жарқылы"
+      },
+      "definition": {
+        "ru": "Внезапное выделение энергии на Солнце.",
+        "en": "A sudden burst of energy from the Sun.",
+        "kk": "Күндегі энергияның кенеттен көп бөлінуі."
+      },
+      "visual": {
+        "emoji": "🌞",
+        "relatedConceptIds": [
+          "w25",
+          "w24",
+          "w29"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} — резкое выделение энергии на поверхности Солнца.",
+            "en": "A {term} is a sudden release of energy on the Sun.",
+            "kk": "{term} — Күнде энергияның кенет бөлінуі."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w25",
+          "optionIds": [
+            "w25",
+            "w26",
+            "w28"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w25",
+            "w27",
+            "w29"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ — резкое выделение энергии на поверхности Солнца.",
+            "en": "A ____ is a sudden release of energy on the Sun.",
+            "kk": "____ — Күнде энергияның кенет бөлінуі."
+          },
+          "answerId": "w25",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w26",
+      "moduleId": "space-environment",
+      "concept": {
+        "ru": "Пылевая буря",
+        "en": "Dust Storm",
+        "kk": "Шаңды дауыл"
+      },
+      "definition": {
+        "ru": "Сильные ветры, поднимающие пыль.",
+        "en": "Strong winds that carry dust.",
+        "kk": "Шаңды көтеріп әкететін күшті жел."
+      },
+      "visual": {
+        "emoji": "🌪️",
+        "relatedConceptIds": [
+          "w25",
+          "w24",
+          "w29"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} может уменьшать свет, попадающий на солнечные панели.",
+            "en": "A {term} can reduce the sunlight reaching solar panels.",
+            "kk": "{term} күн панельдеріне жететін жарықты азайтуы мүмкін."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w26",
+          "optionIds": [
+            "w25",
+            "w26",
+            "w29"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w26",
+            "w28",
+            "w24"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ может уменьшать свет, попадающий на солнечные панели.",
+            "en": "A ____ can reduce the sunlight reaching solar panels.",
+            "kk": "____ күн панельдеріне жететін жарықты азайтуы мүмкін."
+          },
+          "answerId": "w26",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w27",
+      "moduleId": "space-environment",
+      "concept": {
+        "ru": "Атмосфера",
+        "en": "Atmosphere",
+        "kk": "Атмосфера"
+      },
+      "definition": {
+        "ru": "Газовая оболочка планеты.",
+        "en": "A layer of gases around a planet.",
+        "kk": "Ғаламшарды қоршаған газ қабаты."
+      },
+      "visual": {
+        "emoji": "🌍",
+        "relatedConceptIds": [
+          "w25",
+          "w24",
+          "w29"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} Марса намного тоньше земной.",
+            "en": "The {term} of Mars is much thinner than Earth’s.",
+            "kk": "Марстың {term} Жердікінен әлдеқайда жұқа."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w27",
+          "optionIds": [
+            "w26",
+            "w27",
+            "w29"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w27",
+            "w29",
+            "w25"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ Марса намного тоньше земной.",
+            "en": "The ____ of Mars is much thinner than Earth’s.",
+            "kk": "Марстың ____ Жердікінен әлдеқайда жұқа."
+          },
+          "answerId": "w27",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w28",
+      "moduleId": "space-environment",
+      "concept": {
+        "ru": "Температура",
+        "en": "Temperature",
+        "kk": "Температура"
+      },
+      "definition": {
+        "ru": "Мера теплового состояния тела.",
+        "en": "A measure of how hot or cold something is.",
+        "kk": "Дененің қаншалықты ыстық не суық екенін сипаттайтын шама."
+      },
+      "visual": {
+        "emoji": "🌡️",
+        "relatedConceptIds": [
+          "w25",
+          "w24",
+          "w29"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} на Марсе может сильно меняться в течение суток.",
+            "en": "{term} on Mars can vary greatly during a sol.",
+            "kk": "Марста {term} бір тәуліктің ішінде қатты өзгеруі мүмкін."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w28",
+          "optionIds": [
+            "w24",
+            "w26",
+            "w28"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w28",
+            "w24",
+            "w26"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ на Марсе может сильно меняться в течение суток.",
+            "en": "____ on Mars can vary greatly during a sol.",
+            "kk": "Марста ____ бір тәуліктің ішінде қатты өзгеруі мүмкін."
+          },
+          "answerId": "w28",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w29",
+      "moduleId": "space-environment",
+      "concept": {
+        "ru": "Солнечный ветер",
+        "en": "Solar Wind",
+        "kk": "Күн желі"
+      },
+      "definition": {
+        "ru": "Поток заряженных частиц от Солнца.",
+        "en": "A stream of charged particles from the Sun.",
+        "kk": "Күннен ұшып шығатын зарядталған бөлшектер ағыны."
+      },
+      "visual": {
+        "emoji": "✨",
+        "relatedConceptIds": [
+          "w25",
+          "w24",
+          "w29"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} переносит заряженные частицы от Солнца.",
+            "en": "The {term} carries charged particles away from the Sun.",
+            "kk": "{term} Күннен зарядталған бөлшектерді тасымалдайды."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w29",
+          "optionIds": [
+            "w24",
+            "w27",
+            "w29"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w29",
+            "w25",
+            "w27"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ переносит заряженные частицы от Солнца.",
+            "en": "The ____ carries charged particles away from the Sun.",
+            "kk": "____ Күннен зарядталған бөлшектерді тасымалдайды."
+          },
+          "answerId": "w29",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w30",
+      "moduleId": "mission-planning",
+      "concept": {
+        "ru": "Центр управления",
+        "en": "Mission Control",
+        "kk": "Миссияны басқару орталығы"
+      },
+      "definition": {
+        "ru": "Команда или центр, управляющий космической миссией.",
+        "en": "The team or place that manages a space mission.",
+        "kk": "Ғарыш миссиясын басқаратын команда немесе орталық."
+      },
+      "visual": {
+        "emoji": "🎛️",
+        "relatedConceptIds": [
+          "w30",
+          "w31",
+          "w35"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} координирует действия космической экспедиции.",
+            "en": "{term} coordinates the work of a space mission.",
+            "kk": "{term} ғарыш миссиясының жұмысын үйлестіреді."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w30",
+          "optionIds": [
+            "w30",
+            "w32",
+            "w34"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w30",
+            "w32",
+            "w34"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ координирует действия космической экспедиции.",
+            "en": "____ coordinates the work of a space mission.",
+            "kk": "____ ғарыш миссиясының жұмысын үйлестіреді."
+          },
+          "answerId": "w30",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w31",
+      "moduleId": "mission-planning",
+      "concept": {
+        "ru": "Задержка связи",
+        "en": "Communication Delay",
+        "kk": "Байланыс кідірісі"
+      },
+      "definition": {
+        "ru": "Время, которое требуется сигналу для передачи.",
+        "en": "Time between sending and receiving a signal.",
+        "kk": "Сигналдың жіберілгеннен қабылданғанға дейінгі уақыты."
+      },
+      "visual": {
+        "emoji": "📶",
+        "relatedConceptIds": [
+          "w30",
+          "w31",
+          "w35"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} между Землёй и Марсом зависит от расстояния.",
+            "en": "{term} between Earth and Mars depends on their distance.",
+            "kk": "Жер мен Марс арасындағы {term} олардың қашықтығына байланысты."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w31",
+          "optionIds": [
+            "w31",
+            "w32",
+            "w35"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w31",
+            "w33",
+            "w35"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ между Землёй и Марсом зависит от расстояния.",
+            "en": "____ between Earth and Mars depends on their distance.",
+            "kk": "Жер мен Марс арасындағы ____ олардың қашықтығына байланысты."
+          },
+          "answerId": "w31",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w32",
+      "moduleId": "mission-planning",
+      "concept": {
+        "ru": "Ресурс",
+        "en": "Resource",
+        "kk": "Ресурс"
+      },
+      "definition": {
+        "ru": "Необходимый запас, который может быть ограничен.",
+        "en": "Something useful that can be limited.",
+        "kk": "Шектеулі мөлшерде болатын пайдалы қор."
+      },
+      "visual": {
+        "emoji": "🧰",
+        "relatedConceptIds": [
+          "w30",
+          "w31",
+          "w35"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term}, например запас воды, может закончиться без пополнения.",
+            "en": "A {term}, such as a water supply, can run out if not replenished.",
+            "kk": "{term}, мысалы су қоры, толықтырылмаса таусылуы мүмкін."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w32",
+          "optionIds": [
+            "w32",
+            "w33",
+            "w35"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w32",
+            "w34",
+            "w30"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____, например запас воды, может закончиться без пополнения.",
+            "en": "A ____, such as a water supply, can run out if not replenished.",
+            "kk": "____, мысалы су қоры, толықтырылмаса таусылуы мүмкін."
+          },
+          "answerId": "w32",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w33",
+      "moduleId": "mission-planning",
+      "concept": {
+        "ru": "Эксперимент",
+        "en": "Experiment",
+        "kk": "Тәжірибе"
+      },
+      "definition": {
+        "ru": "Спланированное исследование для проверки идеи.",
+        "en": "A planned test to learn something.",
+        "kk": "Ғылыми болжамды тексеру үшін жоспарланған зерттеу."
+      },
+      "visual": {
+        "emoji": "⚗️",
+        "relatedConceptIds": [
+          "w30",
+          "w31",
+          "w35"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} помогает проверить научную гипотезу.",
+            "en": "An {term} helps test a scientific hypothesis.",
+            "kk": "{term} ғылыми болжамды тексеруге көмектеседі."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w33",
+          "optionIds": [
+            "w30",
+            "w32",
+            "w33"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w33",
+            "w35",
+            "w31"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ помогает проверить научную гипотезу.",
+            "en": "An ____ helps test a scientific hypothesis.",
+            "kk": "____ ғылыми болжамды тексеруге көмектеседі."
+          },
+          "answerId": "w33",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w34",
+      "moduleId": "mission-planning",
+      "concept": {
+        "ru": "Исследование",
+        "en": "Exploration",
+        "kk": "Зерттеу"
+      },
+      "definition": {
+        "ru": "Изучение новых мест и явлений.",
+        "en": "The process of learning about new places.",
+        "kk": "Жаңа жерлер мен құбылыстар туралы білім алу үдерісі."
+      },
+      "visual": {
+        "emoji": "🔭",
+        "relatedConceptIds": [
+          "w30",
+          "w31",
+          "w35"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} далёких миров начинается с наблюдений и измерений.",
+            "en": "{term} of distant worlds begins with observations and measurements.",
+            "kk": "Алыс әлемдерді {term} бақылау мен өлшеуден басталады."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w34",
+          "optionIds": [
+            "w30",
+            "w33",
+            "w34"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w34",
+            "w30",
+            "w32"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ далёких миров начинается с наблюдений и измерений.",
+            "en": "____ of distant worlds begins with observations and measurements.",
+            "kk": "Алыс әлемдерді ____ бақылау мен өлшеуден басталады."
+          },
+          "answerId": "w34",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    },
+    {
+      "id": "w35",
+      "moduleId": "mission-planning",
+      "concept": {
+        "ru": "Безопасность",
+        "en": "Safety",
+        "kk": "Қауіпсіздік"
+      },
+      "definition": {
+        "ru": "Состояние защищённости от опасностей.",
+        "en": "Being protected from harm.",
+        "kk": "Қауіп-қатерден қорғалған күй."
+      },
+      "visual": {
+        "emoji": "🛡️",
+        "relatedConceptIds": [
+          "w30",
+          "w31",
+          "w35"
+        ]
+      },
+      "microsteps": {
+        "intro": {
+          "context": {
+            "ru": "{term} экипажа важнее дополнительного научного опыта.",
+            "en": "Crew {term} takes priority over an optional experiment.",
+            "kk": "Экипаждың {term} қосымша тәжірибеден маңызды."
+          },
+          "memorizationRequired": false
+        },
+        "multipleChoice": {
+          "questionType": "definition-to-term",
+          "correctId": "w35",
+          "optionIds": [
+            "w31",
+            "w33",
+            "w35"
+          ]
+        },
+        "matching": {
+          "pairConceptIds": [
+            "w35",
+            "w31",
+            "w33"
+          ],
+          "clockEnabledBySetting": true
+        },
+        "fillGap": {
+          "sentence": {
+            "ru": "____ экипажа важнее дополнительного научного опыта.",
+            "en": "Crew ____ takes priority over an optional experiment.",
+            "kk": "Экипаждың ____ қосымша тәжірибеден маңызды."
+          },
+          "answerId": "w35",
+          "caseInsensitive": true
+        },
+        "errorReview": {
+          "repeatUntilCorrect": true,
+          "questionTypes": [
+            "multipleChoice",
+            "matching",
+            "fillGap"
+          ]
+        }
+      }
+    }
+  ]
+}
